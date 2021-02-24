@@ -1,6 +1,7 @@
 # Scraper-Bitcoin
+## Scraper:
 
-## Hoe gebruik je deze code:
+### Hoe gebruik je deze code:
 - Installeer Ubuntu op een virtual machine.
 - Installeer Python3 op de virtual machine.
   - Ga naar de terminal en typ het volgende:
@@ -24,7 +25,7 @@
  - Om het bestand te stoppen, typ je:
     -  ctrl + C
 
-## Hoe werkt de code:
+### Hoe werkt de code:
 Eerst importeer je de juiste libraries:
   - import bs4
   - from bs4 import BeautifulSoup
@@ -41,4 +42,18 @@ Nu gaan we naar onze functie Scraper(). Hier zijn twee global variabelen aangema
 
 Als de tijd groter is dan de actuele tijd dan gaan we de dataframe sorteren op de waarde van USD zodat de hoogste waarde van boven komt te staan en dan printen we de hoogste waardemet de bijhorende informatie uit. Aangezien we het grootste getal van deze minuut hebben uitgeprint, gaan we de gesorteerde dataframe leegmaken. We stellen de actuele tijd gelijk aan tijd en we maken de dataframe leeg. Hierna voegen we de informatie van de actuele hash aan de dataframe toe anders slagen we deze over. Zo gaat het programma verder tot het handmatig gestopt wordt.
 
-    
+## Mongo:
+
+Je moet eerst de vorige stappen hebben uitgevoerd. Dan moet je mongodb installeren op de ubuntu machine. Dit doe je door 'bash.sh' te laten draaien in de terminal.
+  - Om het script te runnen moet je eerst toegang geven tot het script.
+    - chmod +x /path/to/bashscript.sh
+  - Om het te laten runnen, typ je:
+    - /path/to/bashscript.sh
+  
+Het script 'bash.sh' gaat mongodb installeren, starten en een database aanmaken. Als dit gebeurd is, ga je het script 'scrapermongo.py' runnen. Deze code gaat verbinding maken met mongodb, een collectie aan de database toevoegen en per minuut al de gegevens in een jsonfile steken. Deze jsonfile wordt dan toegevoegd aan de collectie. De naam van de database is Bitcoin en de collectie is Transaction_info. Om te kijken of de database is aangemaakt typ je in de terminal 'Show dbs'. Als 'Bitcoin hier bij staat is het gelukt. Om te informatie te bekijken in de collectie typ je 'Use database_name', 'db.collection_name.find().pretty()', dit gaat al de gegevens uitprinten.
+
+Om te kunnen werken met mongodb in python, moeten we eerst nog libraries importeren.
+  - pymongo:
+    - pip3 install pymongo
+
+In dit script gaan we terug alle gegevens halen van de website maar ipv ze in een database te steken, gaan we ze opslaan in een dictionary. Deze dictionary gaat per minuut in een jsonfile worden opgeslagen 'information.json'. Deze jsonfile wordt wan opgeslagen in onze Bitcoin database. Dan maken we de dictionary leeg, zodat de informatie van de volgende minuut opgeslagen kan worden. Dit gebeurd de hele tijd opnieuw tot je de code stop zet.
