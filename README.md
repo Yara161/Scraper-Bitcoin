@@ -57,3 +57,16 @@ Om te kunnen werken met mongodb in python, moeten we eerst nog libraries importe
     - pip3 install pymongo
 
 In dit script gaan we terug alle gegevens halen van de website maar ipv ze in een database te steken, gaan we ze opslaan in een dictionary. Deze dictionary gaat per minuut in een jsonfile worden opgeslagen 'information.json'. Deze jsonfile wordt wan opgeslagen in onze Bitcoin database. Dan maken we de dictionary leeg, zodat de informatie van de volgende minuut opgeslagen kan worden. Dit gebeurd de hele tijd opnieuw tot je de code stop zet.
+
+## Redis:
+Als je de vorige stappen hebt uitgevoerd, kan je redis.sh downloaden. In deze file gaan we redis installeren en checken of het werkt.
+  - Om het script te runnen moet je eerst toegang geven tot het script.
+    - chmod +x /path/to/bashscript.sh
+  - Om het te laten runnen, typ je:
+    - /path/to/bashscript.sh
+ 
+ We beginnen met het script Scraperredis.py uit te voeren. Om dit te laten werken moet je enkel nog redis in python installeren.
+  - Pip3 install redis
+We zetten alles in een dataframe en elke minuut slagen we deze op in redis. Als deze is opgeslagen verwijderen we de gegevens in de dataframe en gaan we de volgende minuut scrapen.
+
+In het bestand Redis.py, gaan we eerst onze mongo database en collectie aanmaken. Dan gaan we de data die we opgeslagen hebben in redis terughalen. Deze informatie zetten we om naar een dictionary om het goed te kunnen sorteren. We nemen de eerste key en de informatie die bij de key hoort, aangezien dit de hoogste waarde heeft. Dit gaan we in onze mongo database plaatsen en na 1 minuut gaan we redis clearen.
