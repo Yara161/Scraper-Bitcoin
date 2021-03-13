@@ -70,3 +70,14 @@ Als je de vorige stappen hebt uitgevoerd, kan je redis.sh downloaden. In deze fi
 We zetten alles in een dataframe en elke minuut slagen we deze op in redis. Als deze is opgeslagen verwijderen we de gegevens in de dataframe en gaan we de volgende minuut scrapen.
 
 In het bestand Redis.py, gaan we eerst onze mongo database en collectie aanmaken. Dan gaan we de data die we opgeslagen hebben in redis terughalen. Deze informatie zetten we om naar een dictionary om het goed te kunnen sorteren. We nemen de eerste key en de informatie die bij de key hoort, aangezien dit de hoogste waarde heeft. Dit gaan we in onze mongo database plaatsen en na 1 minuut gaan we redis clearen.
+
+## Docker 01:
+Eerst moet je docker installeren op je pc. Dan moet je redis en mongo installeren op docker. Je typt in de terminal het volgende:
+  - sudo docker pull mongo
+  - sudo docker pull redis
+Eens dit gebeurd is moet je zeggen op welke poort deze containters moeten draaien zodat je deze kan aanroepen in je code. Dit typ je in de terminal:
+  - sudo docker run --name Redis -d redis #on port 6379 default port
+  - sudo docker run --name Mongodb -d mongo #on port 27017 default port
+Nu moet je de poorten in de code ook aanpassen zodat ze kunnne communiceren met elkaar. In je code typ je:
+  - r=redis.Redis(host='localhost', port=6379, db=0) (voor redis) 
+  - client = pymongo.MongoClient("mongodb://localhost:27017/") (voor mongo)
