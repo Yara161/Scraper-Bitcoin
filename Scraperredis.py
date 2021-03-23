@@ -17,8 +17,6 @@ import urllib.parse
 import redis
 r= redis.Redis(host= 'redis', port=6379, db=0)
 
-import connect
-from connect import connecttomongo
 
 
 
