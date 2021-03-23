@@ -22,7 +22,7 @@ r= redis.Redis(host= 'redis', port=6379, db=0)
 def Scraper():
     global dataframe
     global current 
-    print("ja")
+
     website = requests.get(url) #we roepen de website aan
     soup = BeautifulSoup(website.content, 'html.parser') #we willen de htmlcode
 
