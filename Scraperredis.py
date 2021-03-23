@@ -66,6 +66,7 @@ def Scraper():
                 # print(jsondata)
                 # jsontest=json.dumps(jsondata)
                 r.set('test_json',jsondata)
+                print("ja")
                 print(r.get('test_json'))
 
                 dataframe=pd.DataFrame(columns=['Hash','Time','Amount (BTC)', 'Amount (USD)'])
