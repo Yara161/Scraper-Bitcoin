@@ -71,7 +71,7 @@ def Scraper():
                 r.set('test_json',jsondata)
                 print(r.get('test_json'))
 
-                s.connect(('scraper_connect',4000))
+                s.connect(('scraper_main',4000))
 
                 dataframe=pd.DataFrame(columns=['Hash','Time','Amount (BTC)', 'Amount (USD)'])
                 
