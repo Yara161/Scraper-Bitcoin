@@ -8,7 +8,7 @@ import time
 r= redis.Redis(host= 'redis', port=6379, db=0)
 
 while True: #nog per minuut
-    time.sleep(10)
+    time.sleep(60)
     print("yes")
 
     client = pymongo.MongoClient(host= 'mongo' , port=27017)
