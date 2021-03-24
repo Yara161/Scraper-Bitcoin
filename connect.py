@@ -33,4 +33,4 @@ while True: #nog per minuut
         print(x)
         r.expire('test_json',60)
     except:
-        print()
+        print("jow")
