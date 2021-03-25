@@ -18,7 +18,7 @@ while True: #nog per minuut
         test=r.get('test_json')
         testdic=json.loads(test)
         # print(type(testdic))
-       # print("wtf")
+        print("wtf")
 
         dictionary= dict(sorted(testdic.items(),key=lambda r:r[1][2],reverse=True))
         print(dictionary)
