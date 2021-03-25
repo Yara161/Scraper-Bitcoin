@@ -10,7 +10,7 @@ r= redis.Redis(host= 'redis', port=6379, db=0)
 
 while True: #nog per minuut
     try:
-        #print("yes")
+        print("yes")
 
         client = pymongo.MongoClient(host= 'localhost' , port=27017)
         mydb = client["Bitcoin"]
