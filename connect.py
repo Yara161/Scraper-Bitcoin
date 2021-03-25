@@ -21,7 +21,7 @@ while True: #nog per minuut
        # print("wtf")
 
         dictionary= dict(sorted(testdic.items(),key=lambda r:r[1][2],reverse=True))
-        # print(dictionary)
+        print(dictionary)
 
         hash=next(iter(dictionary))
         hoogstewaarde=str(next(iter(dictionary.values())))
