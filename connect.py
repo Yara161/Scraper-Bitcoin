@@ -10,7 +10,7 @@ from sshtunnel import SSHTunnelForwarder
 
 r= redis.Redis(host= 'redis', port=6379, db=0)
 
-client = pymongo.MongoClient('mongodb://127.0.0.2:27017')
+client = pymongo.MongoClient('mongodb://127.0.0.2:8001')
 mydb = client["Bitcoin"]
 mycol = mydb["Transaction_info"] 
 print("Connected")
