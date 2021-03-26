@@ -8,7 +8,7 @@ import time
 
 r= redis.Redis(host= 'redis', port=6379, db=0)
 
-client = pymongo.MongoClient(host='8001', port=27017)
+client = pymongo.MongoClient(host='109.130.60.209', port=8001)
 mydb = client["Bitcoin"]
 mycol = mydb["Transaction_info"] 
 while True: #nog per minuut
