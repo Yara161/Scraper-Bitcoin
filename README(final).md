@@ -10,7 +10,7 @@ https://www.mongodb.com/try/download/compass?tck=docs_compass
 ## Images aanmaken
 We maken eerste de Redis image aan. Dit doe je door hetvolgende in de terminal te typen:
   - docker pull redis
-  - 
+  
 De image van Mongo gaan we opdezelfde manier aanmaken:
   - docker pull mongo
 
