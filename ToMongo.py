@@ -35,6 +35,6 @@ def connect():
         dictionary={}
 
     except:
-        return connect()
+        connect()
 while True:
     connect()
