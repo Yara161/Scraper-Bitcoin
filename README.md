@@ -80,5 +80,5 @@ Eens dit gebeurd is moet je zeggen op welke poort deze containters moeten draaie
   - sudo docker run --name Redis -d redis #on port 6379 default port
   - sudo docker run --name Mongodb -d mongo #on port 27017 default port
 Nu moet je de poorten in de code ook aanpassen zodat ze kunnne communiceren met elkaar. In je code typ je:
-  - r=redis.Redis(host='localhost', port=6379, db=0) (voor redis) 
-  - client = pymongo.MongoClient("mongodb://localhost:27017/") (voor mongo)
+    - r=redis.Redis(host='localhost', port=6379, db=0) (voor redis) 
+    - client = pymongo.MongoClient("mongodb://localhost:27017/") (voor mongo)
