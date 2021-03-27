@@ -30,10 +30,10 @@ while True:
 
         r.delete('test_json')
 
-        # testdic={}
-        # eind={}
+        testdic={}
+        eind={}
         hash=''
-        # dictionary={}
+        dictionary={}
 
     except:
         print()
